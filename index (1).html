@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KOKO Art & Cultural Organisation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#111;
+color:white;
+overflow-x:hidden;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+url('https://images.unsplash.com/photo-1518998053901-5348d3961a04?q=80&w=1400&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+}
+
+.hero-content h1{
+font-size:70px;
+color:#ffb300;
+margin-bottom:20px;
+text-shadow:0 0 20px black;
+}
+
+.hero-content p{
+font-size:22px;
+max-width:850px;
+margin:auto;
+line-height:1.8;
+}
+
+.hero-btn{
+display:inline-block;
+margin-top:30px;
+padding:15px 35px;
+background:#ffb300;
+color:black;
+font-weight:bold;
+border-radius:40px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.hero-btn:hover{
+transform:scale(1.05);
+background:white;
+}
+
+/* NAV */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.8);
+backdrop-filter:blur(10px);
+padding:15px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:999;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#ffb300;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+color:#ffb300;
+}
+
+/* SECTIONS */
+
+section{
+padding:90px 8%;
+}
+
+.section-title{
+text-align:center;
+font-size:45px;
+margin-bottom:50px;
+color:#ffb300;
+}
+
+/* ABOUT */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:20px;
+box-shadow:0 0 30px rgba(255,179,0,0.3);
+}
+
+.about-text p{
+line-height:1.9;
+font-size:18px;
+}
+
+/* CARDS */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:#1d1d1d;
+padding:30px;
+border-radius:20px;
+transition:0.4s;
+border:1px solid #333;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#ffb300;
+}
+
+.card h3{
+margin-bottom:15px;
+color:#ffb300;
+}
+
+/* MOTIVATION */
+
+.motivation{
+background:#181818;
+border-radius:20px;
+padding:50px;
+text-align:center;
+}
+
+.motivation h2{
+font-size:40px;
+margin-bottom:20px;
+color:#ffb300;
+}
+
+.motivation p{
+font-size:20px;
+line-height:1.8;
+max-width:900px;
+margin:auto;
+}
+
+/* DONATION */
+
+.donation-form{
+max-width:700px;
+margin:auto;
+background:#1d1d1d;
+padding:40px;
+border-radius:20px;
+}
+
+.donation-form input,
+.donation-form textarea{
+width:100%;
+padding:15px;
+margin-bottom:20px;
+border:none;
+border-radius:10px;
+background:#2a2a2a;
+color:white;
+font-size:16px;
+}
+
+.donation-form button{
+width:100%;
+padding:15px;
+border:none;
+border-radius:50px;
+background:#ffb300;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+.donation-form button:hover{
+background:white;
+}
+
+/* COMMENTS */
+
+.comment-box{
+max-width:800px;
+margin:auto;
+background:#1d1d1d;
+padding:40px;
+border-radius:20px;
+}
+
+.comment-box textarea,
+.comment-box input{
+width:100%;
+padding:15px;
+margin-bottom:20px;
+border:none;
+border-radius:10px;
+background:#2a2a2a;
+color:white;
+}
+
+.comment-box button{
+padding:15px 30px;
+background:#ffb300;
+border:none;
+border-radius:40px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.comments-list{
+margin-top:30px;
+}
+
+.comment{
+background:#2a2a2a;
+padding:20px;
+border-radius:15px;
+margin-bottom:15px;
+}
+
+/* FOOTER */
+
+footer{
+background:black;
+padding:30px;
+text-align:center;
+margin-top:80px;
+}
+
+footer h3{
+color:#ffb300;
+margin-bottom:10px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero-content h1{
+font-size:45px;
+}
+
+.about{
+grid-template-columns:1fr;
+}
+
+nav{
+padding:15px 20px;
+}
+
+nav ul{
+display:none;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+<div class="logo">KOKO CARE AND SUPPORT</div>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#culture">Culture</a></li>
+<li><a href="#motivation">Motivation</a></li>
+<li><a href="#donate">Donate</a></li>
+<li><a href="#comments">Comments</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>KOKO Art & Cultural Organisation</h1>
+
+<p>
+Celebrating African traditions, empowering young creatives,
+promoting cultural heritage, and inspiring the next generation
+through art, music, dance, storytelling, and community unity.
+</p>
+
+<a href="#about" class="hero-btn">Explore Our Culture</a>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="section-title">About KOKO</h2>
+
+<div class="about">
+<img src="koko.png">
+
+<img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200&auto=format&fit=crop">
+
+<img src="img3.jpg">
+
+<img src="img2.jpg">
+
+<img src="img1.jpg">
+
+
+<div class="about-text">
+
+<p>
+KOKO Art & Cultural Organisation is dedicated to preserving and promoting
+the beauty of African culture and traditions. We believe that art,
+music, poetry, fashion, storytelling, and dance are powerful tools
+that connect generations and inspire communities.
+</p>
+
+<br>
+
+<p>
+Our mission is to motivate young Africans to believe in themselves,
+protect their heritage, and use creativity to build a brighter future.
+Through events, workshops, performances, and cultural education,
+KOKO brings people together in unity and pride.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CULTURE -->
+
+<section id="culture">
+
+<h2 class="section-title">African Traditions</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Traditional Dance</h3>
+<p>
+Experience the rhythm and energy of African dance traditions that
+carry stories, celebrations, and community spirit.
+</p>
+</div>
+
+<div class="card">
+<h3>Music & Drumming</h3>
+<p>
+African drums and music bring people together and preserve
+powerful cultural identity across generations.
+</p>
+</div>
+
+<div class="card">
+<h3>Storytelling</h3>
+<p>
+African storytelling teaches wisdom, values, courage,
+and the importance of respecting heritage.
+</p>
+</div>
+
+<div class="card">
+<h3>Art & Fashion</h3>
+<p>
+Celebrate African creativity through paintings,
+beadwork, traditional fashion, and handmade crafts.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- MOTIVATION -->
+
+<section id="motivation">
+
+<div class="motivation">
+
+<h2>Motivation For The Youth</h2>
+
+<p>
+"Never be ashamed of your roots. Africa is rich in wisdom,
+culture, creativity, and strength. Your talent matters.
+Your dreams matter. Stand proud, work hard, and let your
+creativity inspire the world."
+</p>
+
+</div>
+
+</section>
+
+<!-- DONATION -->
+
+<section id="donate">
+
+<h2 class="section-title">Support Our Mission</h2>
+
+<div class="donation-form">
+
+<form onsubmit="sendDonation(event)">
+
+<input type="text" id="donorName" placeholder="Your Full Name" required>
+
+<input type="email" id="donorEmail" placeholder="Your Email Address" required>
+
+<input type="number" id="donationAmount" placeholder="Donation Amount (R)" required>
+
+<textarea id="donorMessage" rows="5" placeholder="Leave a message..."></textarea>
+
+<button type="submit">Donate & Support</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- COMMENTS -->
+
+<section id="comments">
+
+<h2 class="section-title">Community Comments</h2>
+
+<div class="comment-box">
+
+<input type="text" id="commentName" placeholder="Your Name">
+
+<textarea id="commentText" rows="5" placeholder="Share your thoughts..."></textarea>
+
+<button onclick="addComment()">Post Comment</button>
+
+<div class="comments-list" id="commentsList">
+
+<div class="comment">
+<strong>JOHNY:</strong>
+<p>
+Beautiful platform celebrating African identity and culture.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h3>KOKO Art & Cultural Organisation</h3>
+
+<p>
+Preserving African heritage • Inspiring the next generation • Building unity through culture
+</p>
+
+</footer>
+
+<script>
+
+/* COMMENTS */
+
+function addComment(){
+
+let name = document.getElementById("commentName").value;
+let text = document.getElementById("commentText").value;
+
+if(name === "" || text === ""){
+alert("Please fill all comment fields");
+return;
+}
+
+let commentBox = document.createElement("div");
+commentBox.classList.add("comment");
+
+commentBox.innerHTML = `
+<strong>${name}:</strong>
+<p>${text}</p>
+`;
+
+document.getElementById("commentsList").prepend(commentBox);
+
+document.getElementById("commentName").value = "";
+document.getElementById("commentText").value = "";
+
+}
+
+/* DONATION */
+
+function sendDonation(e){
+
+e.preventDefault();
+
+let name = document.getElementById("donorName").value;
+let amount = document.getElementById("donationAmount").value;
+
+alert(
+"Thank you " + name +
+" for supporting KOKO Art & Cultural Organisation with R" + amount + "! Redirecting to secure donation page..."
+);
+
+document.querySelector("form").reset();
+
+setTimeout(() => {
+window.location.href = "https://www.paypal.com/ncp/payment/2QBAVWTMDFPFW";
+}, 3000);
+
+}
+
+</script>
+
+</body>
+</html>
