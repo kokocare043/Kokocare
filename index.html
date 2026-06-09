@@ -622,29 +622,56 @@ window.location.href = "https://www.paypal.com/ncp/payment/2QBAVWTMDFPFW";
 
 </script>
 
-
 <script>
-const endTime = new Date().getTime() + (120 * 60 * 60 * 1000);
 
-function updateCountdown(){
-  const now = new Date().getTime();
-  const distance = endTime - now;
+// First visit: set deadline 120 hours from now
+if (!localStorage.getItem("kokoUpdateDeadline")) {
 
-  if(distance <= 0){
-    document.getElementById("countdown").innerHTML = "EXPIRED";
-    return;
-  }
+    const deadline = Date.now() + (120 * 60 * 60 * 1000);
 
-  const hours = Math.floor(distance / (1000*60*60));
-  const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
-  const seconds = Math.floor((distance % (1000*60)) / 1000);
-
-  document.getElementById("countdown").innerHTML =
-    `${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+    localStorage.setItem(
+        "kokoUpdateDeadline",
+        deadline
+    );
 }
 
-setInterval(updateCountdown,1000);
+const updateDeadline =
+Number(localStorage.getItem("kokoUpdateDeadline"));
+
+function updateCountdown(){
+
+    const now = Date.now();
+    const distance = updateDeadline - now;
+
+    if(distance <= 0){
+
+        document.getElementById("updateBanner").style.background="#ff3333";
+
+        document.getElementById("countdown").innerHTML =
+        "⚠ UPDATE REQUIRED";
+
+        return;
+    }
+
+    const days =
+    Math.floor(distance/(1000*60*60*24));
+
+    const hours =
+    Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+    const minutes =
+    Math.floor((distance%(1000*60*60))/(1000*60));
+
+    const seconds =
+    Math.floor((distance%(1000*60))/1000);
+
+    document.getElementById("countdown").innerHTML =
+    `${days}d ${hours}h ${minutes}m ${seconds}s`;
+}
+
 updateCountdown();
+setInterval(updateCountdown,1000);
+
 </script>
 
 </body>
